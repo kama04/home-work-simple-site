@@ -253,6 +253,7 @@ a {
 .footer__description {
     font-size: 0.8125rem;
 }
+
 @media (max-width: 576px) {
   h1 {
     font-size: 2rem;
@@ -295,74 +296,46 @@ a {
 }
 
 /* планшети до 768px */
+
 @media (max-width: 768px) {
-  .navbar__list {
-    justify-content: center;
+  .navbar__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    padding: 5px;
   }
 
-  .experience__container {
-    justify-content: center;
+  .navbar__btn-row {
+    height: 3px;
+    width: 100%;
+    background: var(--color-black);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  .navbar__list {
+    display: none;          /* скрываем по умолчанию */
+    flex-direction: column;
+    gap: var(--gap);
+    margin-top: 10px;       /* отступ от кнопки */
+  }
+
+  .navbar__list.active {
+    display: flex;  
+        display: flex;
+        align-items: center;
+        flex-direction: column;        /* показываем при клике */
   }
 }
+
+
 
 /* ноутбуки до 1024px */
 @media (max-width: 1024px) {
   h1 {
     font-size: 2.5rem;
   }
-}
-
-.navbar__btn {
-  display: none; /* приховано на десктопі */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.navbar__btn-row {
-  height: 3px;
-  background: var(--color-black);
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-/* Ховаємо меню на мобільних */
-@media (max-width: 768px) {
-  .navbar__btn {
-    display: flex;
-  }
-
-  .navbar__list {
-    display: none;
-    flex-direction: column;
-    gap: var(--gap);
-    background: var(--color-light);
-    padding: 20px;
-    position: absolute;
-    top: 80px;   /* нижче хедера */
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
-
-  /* Коли меню активне */
-  .navbar__list.active {
-    display: flex;
-  }
-}
-
-/* Анімація перетворення на хрестик */
-.navbar__btn.open .navbar__btn-row:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-
-.navbar__btn.open .navbar__btn-row:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar__btn.open .navbar__btn-row:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
 }
