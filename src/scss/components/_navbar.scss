@@ -1,0 +1,73 @@
+@use '../presets/' as *;
+.navbar {
+    margin-bottom: 144px;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 $gap-md;
+        margin-left: -$gap-sm;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        letter-spacing: $letter-spacing;
+        padding: $gap-sm;
+        text-transform: uppercase;
+
+        &--active {
+            color: $color-primary;
+            font-weight: $font-weight-medium;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: -$gap-sm;
+            right: -$gap-sm;
+            height: 3px;
+            background-color: $color-primary;
+            border-radius: 3px;
+            transform: scaleX(0);
+            transform-origin: center;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+
+
+        &:hover::after {
+            transform: scaleX(1);
+            opacity: 1;
+        }
+
+    }
+
+    &__link--active {
+        color: $color-primary;
+        font-weight: $font-weight-medium;
+    }
+
+    &__link::after {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: -$gap-sm;
+        right: -$gap-sm;
+        height: 3px;
+        background-color: $color-primary;
+        border-radius: 3px;
+        transform: scaleX(0);
+        transform-origin: center;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+    }
+
+    &__link:hover::after {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}

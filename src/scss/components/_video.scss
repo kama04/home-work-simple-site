@@ -1,0 +1,15 @@
+@use '../presets/' as *;
+
+.video {
+    padding-bottom: 100px;
+    background-color: $color-light;
+    margin-top: -$gap-lg;
+
+    &__iframe {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border: 0;
+    }
+}

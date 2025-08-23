@@ -1,0 +1,95 @@
+@use './presets/' as *;
+@use './common/' as *;
+@use './components/' as *;
+
+// Media queries
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        margin-bottom: 80px;
+
+        &__btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 50px;
+            height: 40px;
+            cursor: pointer;
+            padding: 5px;
+
+            &-row {
+                height: 3px;
+                width: 100%;
+                background: $color-black;
+                border-radius: 2px;
+                transition: 0.3s;
+            }
+        }
+
+    }
+    .header{
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+
+    .navbar__list {
+        display: none;
+        flex-direction: column;
+        gap: $gap;
+        margin-top: 10px;
+
+        &.active {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}
+
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .navbar__list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $gap-sm;
+    }
+
+    .hero {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__button {
+            min-width: auto;
+            width: 100%;
+        }
+    }
+
+    .experience__container {
+        flex-direction: column;
+        align-items: center;
+        gap: $gap;
+    }
+
+    .experience-item {
+        justify-content: center;
+    }
+}
